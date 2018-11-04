@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/XiaoLuo01/Luo_ui/issues"
   },
-  "homepage": "https://github.com/XiaoLuo01/Luo_ui#readme"
+  "homepage": "https://github.com/XiaoLuo01/Luo_ui#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
