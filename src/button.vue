@@ -15,7 +15,16 @@ export default {
   data() {
     return {}
   },
-  props: ['icon', 'iconPosition'],
+  props: {
+    icon: {},
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator(value) {
+        return value === 'left' || value === 'right'
+      }
+    }
+  },
   components: {}
 }
 </script>
