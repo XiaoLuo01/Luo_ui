@@ -1,7 +1,7 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-      <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-      <g-icon class="loading" name="loading"></g-icon>
+    <button class="v-button" :class="{[`icon-${iconPosition}`]: true}">
+      <v-icon class="icon" v-if="icon" :name="icon"></v-icon>
+      <v-icon class="loading" name="loading"></v-icon>
       <div class="content">
         <slot></slot>
       </div>
@@ -37,7 +37,7 @@ export default {
     transform: rotate(360deg);
   }
 }
-.g-button {
+.v-button {
   font-size: var(--font-size);
   height: var(--button-height);
   padding: 0 1em;

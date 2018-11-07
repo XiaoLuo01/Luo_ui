@@ -1,5 +1,5 @@
 <template>
- <svg v-if="name" class="g-icon" aria-hidden="true">
+ <svg v-if="name" class="v-icon" aria-hidden="true">
         <use :xlink:href="`#i-${name}`"></use>
       </svg>
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
- .g-icon {
+ .v-icon {
             width: 1em;
             height: 1em;
         }
