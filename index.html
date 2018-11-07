@@ -32,10 +32,11 @@
 </head>
 <body>
     <div id="app">
-        <v-button>我爱JS</v-button>
-        <v-button icon="setting">设置</v-button>
-        <v-button icon="download" icon-position="right">下载</v-button>
-        <v-icon name="thumbs-up"></v-icon>
+        <v-button :loading="loading1" @click="loading1 = !loading1">我爱JS</v-button>
+        <v-button icon="setting" :loading="loading2"
+        @click="loading2 = !loading2">设置</v-button>
+        <v-button icon="download" icon-position="right" :loading="loading3"
+        @click="loading3 = !loading3">下载</v-button>
     </div>
 
     <script src="./src/app.js"></script>
