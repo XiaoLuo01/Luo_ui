@@ -20,7 +20,7 @@
             --border-radius: 4px;
             --color: #333;
             --border-color: #999;
-            --border-color-hover: #666;
+            --border-color-hover: blue;
         }
         #app {
             margin: 30px;
@@ -37,9 +37,14 @@
         @click="loading2 = !loading2">设置</v-button>
         <v-button icon="download" icon-position="right" :loading="loading3"
         @click="loading3 = !loading3">下载</v-button>
+        <v-button-group>
+            <v-button icon="left">上一页</v-button>
+            <v-button>更多</v-button>
+            <v-button icon="right" icon-position="right">下一页</v-button>
+        </v-button-group>
     </div>
 
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_906763_igebkoeryid.js"></script>
+    <script src="//at.alicdn.com/t/font_906763_m0gwknj06d.js"></script>
 </body>
 </html>
