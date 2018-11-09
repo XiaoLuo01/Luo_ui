@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import Icon from './icon'
 export default {
   name: "",
   data() {
@@ -28,7 +29,9 @@ export default {
       }
     }
   },
-  components: {}
+  components: {
+    'v-icon': Icon
+  }
 }
 </script>
 
