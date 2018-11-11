@@ -4,6 +4,8 @@
 
 [![Build Status](https://www.travis-ci.org/XiaoLuo01/Violet_ui.svg?branch=master)](https://www.travis-ci.org/XiaoLuo01/Violet_ui)
 
+[![NPM](https://nodei.co/npm/<package>.png)](https://npmjs.org/package/<package>)
+
 ## 介绍
 
 ## 开始使用
