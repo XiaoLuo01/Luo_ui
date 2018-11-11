@@ -2,7 +2,7 @@
     <button class="v-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
       <v-icon class="icon" v-if="icon && !loading" :name="icon"></v-icon>
       <v-icon class="loading icon" name="loading" v-if="loading"></v-icon>
-      <div class="content">
+      <div class="content violet">
         <slot></slot>
       </div>
     </button>
