@@ -4,7 +4,7 @@
 
 [![Build Status](https://www.travis-ci.org/XiaoLuo01/Violet_ui.svg?branch=master)](https://www.travis-ci.org/XiaoLuo01/Violet_ui)
 
-[![NPM](https://nodei.co/npm/<package>.png)](https://npmjs.org/package/<package>)
+[![NPM](https://nodei.co/npm/violet_ui.png)](https://npmjs.org/violet_ui/violet_ui)
 
 ## 介绍
 
