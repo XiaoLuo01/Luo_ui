@@ -44,6 +44,9 @@
             <v-input value="王五" error="姓名不能少于两个字"></v-input>
         </div>
         <div class="box">
+            <v-input value="王五" @change="inputChange"></v-input>
+        </div>
+        <div class="box">
             <v-button :loading="loading1" @click="loading1 = !loading1">我爱JS</v-button>
             <v-button icon="setting" :loading="loading2"
             @click="loading2 = !loading2">设置</v-button>
