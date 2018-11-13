@@ -38,7 +38,8 @@
         <div class="box">
             <v-input value="张三" disabled></v-input>
             <v-input value="李四" readonly></v-input>
-            <v-input value="王五" ></v-input>
+            <v-input v-model="message"></v-input>
+            <span>{{message}}</span>
         </div>
         <div class="box">
             <v-input value="王五" error="姓名不能少于两个字"></v-input>
