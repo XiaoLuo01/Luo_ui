@@ -1,68 +1,99 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Violet_ui</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-        }
-        #app {
-            margin: 30px;
-        }
-        body {
-            font-size: var(--font-size);
-        }
-        .box {
-            margin: 20px;
-        }
+      :root {
+        --button-height: 32px;
+        --font-size: 14px;
+        --button-bg: white;
+        --button-active-bg: #eee;
+        --border-radius: 4px;
+        --color: #333;
+        --border-color: #999;
+        --border-color-hover: #666;
+      }
+      #app {
+        margin: 30px;
+      }
+      body {
+        font-size: var(--font-size);
+      }
+      .box {
+        margin: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">
-        <div class="box">
-            <v-input value="张三" disabled></v-input>
-            <v-input value="李四" readonly></v-input>
-            <v-input v-model="message"></v-input>
-            <span>{{message}}</span>
-        </div>
-        <div class="box">
-            <v-input value="王五" error="姓名不能少于两个字"></v-input>
-        </div>
-        <div class="box">
-            <v-input value="王五" @change="inputChange"></v-input>
-        </div>
-        <div class="box">
-            <v-button :loading="loading1" @click="loading1 = !loading1">我爱JS</v-button>
-            <v-button icon="setting" :loading="loading2"
-            @click="loading2 = !loading2">设置</v-button>
-            <v-button icon="download" icon-position="right" :loading="loading3"
-            @click="loading3 = !loading3">下载</v-button>
-            <v-button-group>
-                <v-button icon="left">上一页</v-button>
-                <v-button>更多</v-button>
-                <v-button icon="right" icon-position="right">下一页</v-button>
-            </v-button-group>
-        </div>
+      <v-row>
+        <v-col>1</v-col>
+        <v-col>2</v-col>
+      </v-row>
+      <v-row>
+        <v-col></v-col>
+        <v-col></v-col>
+        <v-col></v-col>
+      </v-row>
+      <v-row>
+        <v-col></v-col>
+        <v-col></v-col>
+        <v-col></v-col>
+        <v-col></v-col>
+      </v-row>
+      <v-row>
+          <v-col span="2"></v-col>
+          <v-col span="22"></v-col>
+      </v-row>
+
+      <div class="box">
+        <v-input value="张三" disabled></v-input>
+        <v-input value="李四" readonly></v-input>
+        <v-input v-model="message"></v-input>
+        <span>{{ message }}</span>
+      </div>
+      <div class="box">
+        <v-input value="王五" error="姓名不能少于两个字"></v-input>
+      </div>
+      <div class="box">
+        <v-input value="王五" @change="inputChange"></v-input>
+      </div>
+      <div class="box">
+        <v-button :loading="loading1" @click="loading1 = !loading1"
+          >我爱JS</v-button
+        >
+        <v-button
+          icon="setting"
+          :loading="loading2"
+          @click="loading2 = !loading2"
+          >设置</v-button
+        >
+        <v-button
+          icon="download"
+          icon-position="right"
+          :loading="loading3"
+          @click="loading3 = !loading3"
+          >下载</v-button
+        >
+        <v-button-group>
+          <v-button icon="left">上一页</v-button>
+          <v-button>更多</v-button>
+          <v-button icon="right" icon-position="right">下一页</v-button>
+        </v-button-group>
+      </div>
     </div>
 
     <div id="test"></div>
 
     <script src="./src/app.js"></script>
-</body>
+  </body>
 </html>
