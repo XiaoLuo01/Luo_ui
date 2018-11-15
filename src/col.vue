@@ -1,8 +1,6 @@
 <template>
-    <div class="col" :class="[`span && col-${span}`, `offset && offset-${offset}`]" :style="{paddingLeft: gutter/2+'px',paddingRight: gutter/2+'px'}">
-        <div style="border: 1px solid blueviolet;height: 50px;">
-            <slot></slot>
-        </div>
+    <div class="col" :class="colClass" :style="colStyle">
+        <slot></slot>
     </div>
 </template>
 
@@ -19,7 +17,19 @@ export default {
   },
   data() {
     return {
-        gutter: 0
+      gutter: 0
+    }
+  },
+  computed: {
+    colStyle() {
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px"
+      }
+    },
+    colClass() {
+      let { span, offset } = this
+      return [span && `col-${span}`, offset && `offset-${offset}`]
     }
   },
   components: {}
@@ -30,8 +40,8 @@ export default {
 .col {
   width: 50%;
   height: 50px;
-//   background: rgba(0, 153, 229, 0.7);
-//   border: 1px solid blueviolet;
+  //   background: rgba(0, 153, 229, 0.7);
+  //   border: 1px solid blueviolet;
 
   $class: col-;
 
