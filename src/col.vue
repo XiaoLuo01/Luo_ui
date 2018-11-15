@@ -1,40 +1,50 @@
 <template>
-    <div class="col" :class="[`col-${span}`]">
-        <slot></slot>
+    <div class="col" :class="[`span && col-${span}`, `offset && offset-${offset}`]" :style="{paddingLeft: gutter/2+'px',paddingRight: gutter/2+'px'}">
+        <div style="border: 1px solid blueviolet;height: 50px;">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'VioCol',
-    props: {
-        span: {
-            type: [Number, String]
-        }
+  name: "VioCol",
+  props: {
+    span: {
+      type: [Number, String]
     },
-    data() {
+    offset: {
+      type: [Number, String]
+    }
+  },
+  data() {
     return {
-
+        gutter: 0
     }
-    },
-    components: {
-
-    }
+  },
+  components: {}
 }
 </script>
 
 <style scoped lang="scss">
 .col {
   width: 50%;
-  height: 100px;
-  background: rgba(0, 153, 229, 0.7);
-  border: 1px solid blueviolet;
+  height: 50px;
+//   background: rgba(0, 153, 229, 0.7);
+//   border: 1px solid blueviolet;
 
   $class: col-;
 
   @for $n from 1 through 24 {
     &.#{$class}#{$n} {
       width: ($n / 24) * 100%;
+    }
+  }
+
+  $class_prefix: offset-;
+  @for $n from 1 through 24 {
+    &.#{$class_prefix}#{$n} {
+      margin-left: ($n / 24) * 100%;
     }
   }
 }

@@ -35,25 +35,25 @@
   </head>
   <body>
     <div id="app">
-      <v-row>
-        <v-col>1</v-col>
-        <v-col>2</v-col>
-      </v-row>
-      <v-row>
-        <v-col></v-col>
-        <v-col></v-col>
-        <v-col></v-col>
-      </v-row>
-      <v-row>
-        <v-col></v-col>
-        <v-col></v-col>
-        <v-col></v-col>
-        <v-col></v-col>
-      </v-row>
-      <v-row>
-          <v-col span="2"></v-col>
-          <v-col span="22"></v-col>
-      </v-row>
+      <div class="box" style="border:1px solid rebeccapurple">
+        <v-row gutter="20">
+          <v-col>1</v-col>
+          <v-col>2</v-col>
+        </v-row>
+        <v-row gutter="20">
+          <v-col>1</v-col>
+          <v-col>2</v-col>
+          <v-col>3</v-col> 
+        </v-row>
+        <v-row>
+            <v-col span="2"></v-col>
+            <v-col span="20" offset="2"></v-col>
+        </v-row>
+        <v-row>
+          <v-col span="4"></v-col>
+          <v-col span="20"></v-col>
+        </v-row>
+      </div>
 
       <div class="box">
         <v-input value="张三" disabled></v-input>
