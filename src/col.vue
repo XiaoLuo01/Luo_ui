@@ -38,7 +38,7 @@ export default {
 
 <style scoped lang="scss">
 .col {
-  width: 50%;
+  // width: 50%;
   height: 50px;
   //   background: rgba(0, 153, 229, 0.7);
   //   border: 1px solid blueviolet;
