@@ -5,7 +5,7 @@ import Input from "../src/input"
 Vue.config.productionTip = false
 Vue.config.devtools = false
 
-describe("Button", () => {
+describe("Input", () => {
   it("存在.", () => {
     expect(Input).to.be.ok
   })

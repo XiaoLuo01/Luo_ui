@@ -4,7 +4,7 @@ import Row from "../src/row"
 import Col from "../src/col"
 import { emit } from "cluster"
 
-describe("Button", () => {
+describe("Row", () => {
   it("存在.", () => {
     expect(Row).to.be.ok
   })
