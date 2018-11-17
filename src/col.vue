@@ -39,10 +39,6 @@ export default {
     pc: {
       type: Object,
       validator
-    },
-    widePc: {
-      type: Object,
-      validator
     }
   },
   data() {
@@ -58,14 +54,13 @@ export default {
       }
     },
     colClass() {
-      let { span, offset, phone, ipad, narrowPc, widePc, pc } = this
+      let { span, offset, phone, ipad, narrowPc, pc } = this
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
         ...(phone && [`col-phone-${phone.span}`]),
         ...(ipad && [`col-ipad-${ipad.span}`]),
         ...(narrowPc && [`col-narrowPc-${narrowPc.span}`]),
-        ...(widePc && [`col-widePc-${widePc.span}`]),
         ...(pc && [`col-pc-${pc.span}`])
       ]
     }
@@ -152,22 +147,6 @@ export default {
     }
 
     $class_prefix: offset-pc-;
-    @for $n from 1 through 24 {
-      &.#{$class_prefix}#{$n} {
-        margin-left: ($n / 24) * 100%;
-      }
-    }
-  }
-
-  @media (min-width: 1201px) {
-    $class: col-wide-pc-;
-    @for $n from 1 through 24 {
-      &.#{$class}#{$n} {
-        width: ($n / 24) * 100%;
-      }
-    }
-
-    $class_prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class_prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
