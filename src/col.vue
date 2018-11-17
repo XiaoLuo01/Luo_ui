@@ -24,7 +24,7 @@ export default {
     offset: {
       type: [Number, String]
     },
-    phone: {
+    widePc: {
       type: Object,
       validator
     },
@@ -54,14 +54,14 @@ export default {
       }
     },
     colClass() {
-      let { span, offset, phone, ipad, narrowPc, pc } = this
+      let { span, offset, widePc, ipad, narrowPc, pc } = this
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
-        ...(phone && [`col-phone-${phone.span}`]),
-        ...(ipad && [`col-ipad-${ipad.span}`]),
-        ...(narrowPc && [`col-narrowPc-${narrowPc.span}`]),
-        ...(pc && [`col-pc-${pc.span}`])
+        ...(widePc ? [`col-wide-pc-${widePc.span}`]: []),
+        ...(ipad ? [`col-ipad-${ipad.span}`]: []),
+        ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`]: []),
+        ...(pc ? [`col-pc-${pc.span}`]:[])
       ]
     }
   },
@@ -90,23 +90,7 @@ export default {
     }
   }
 
-  @media (max-width: 576px) {
-    $class: col-phone-;
-    @for $n from 1 through 24 {
-      &.#{$class}#{$n} {
-        width: ($n / 24) * 100%;
-      }
-    }
-
-    $class_prefix: offset-phone-;
-    @for $n from 1 through 24 {
-      &.#{$class_prefix}#{$n} {
-        margin-left: ($n / 24) * 100%;
-      }
-    }
-  }
-
-  @media (min-width: 576px) and (max-width: 768px) {
+  @media (min-width: 577px){
     $class: col-ipad-;
     @for $n from 1 through 24 {
       &.#{$class}#{$n} {
@@ -122,7 +106,7 @@ export default {
     }
   }
 
-  @media (min-width: 769px) and (max-width: 992px) {
+  @media (min-width: 769px){
     $class: col-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class}#{$n} {
@@ -138,7 +122,7 @@ export default {
     }
   }
 
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 993px){
     $class: col-pc-;
     @for $n from 1 through 24 {
       &.#{$class}#{$n} {
@@ -147,6 +131,22 @@ export default {
     }
 
     $class_prefix: offset-pc-;
+    @for $n from 1 through 24 {
+      &.#{$class_prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
+      }
+    }
+  }
+
+  @media (min-width: 1201px) {
+    $class: col-wide-pc-;
+    @for $n from 1 through 24 {
+      &.#{$class}#{$n} {
+        width: ($n / 24) * 100%;
+      }
+    }
+
+    $class_prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
       &.#{$class_prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
