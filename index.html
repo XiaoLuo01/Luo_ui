@@ -22,9 +22,9 @@
         --border-color: #999;
         --border-color-hover: #666;
       }
-      #app {
-        /* margin: 30px; */
-      }
+      /* #app {
+        margin: 30px;
+      } */
       body {
         font-size: var(--font-size);
       }
@@ -36,21 +36,17 @@
         border: 1px solid #666;
         height: 50px;
       }
-      .layout-demo {
-        border: 1px solid #666;
-        min-height: 80px;
-      }
     </style>
   </head>
   <body>
     <div id="app">
       <v-layout style="height: 100vh;">
-          <v-sider class="layout-demo">sider</v-sider>
+          <v-sider style="width: 200px;background: #333">sider</v-sider>
         
         <v-layout>
-            <v-header class="layout-demo">header</v-header>
+          <v-header style="height: 80px;background: #999">header</v-header>
           <v-content class="layout-demo">content</v-content>
-          <v-footer class="layout-demo">footer</v-footer>
+          <v-footer style="height: 50px;background: #ccc">footer</v-footer>
         </v-layout>
         
       </v-layout>
