@@ -22,9 +22,9 @@
         --border-color: #999;
         --border-color-hover: #666;
       }
-      /* #app {
+      #app {
         margin: 30px;
-      } */
+      }
       body {
         font-size: var(--font-size);
       }
@@ -40,7 +40,12 @@
   </head>
   <body>
     <div id="app">
-      <v-layout style="height: 100vh;">
+
+      <div class="box">
+        <button @click="showToast">showToast</button>
+      </div>
+      
+      <!-- <v-layout style="height: 100vh;">
           <v-sider style="width: 200px;background: #333">sider</v-sider>
         
         <v-layout>
@@ -49,7 +54,7 @@
           <v-footer style="height: 50px;background: #ccc">footer</v-footer>
         </v-layout>
         
-      </v-layout>
+      </v-layout> -->
 
       <!--
         <div class="box" style="border:1px solid rebeccapurple">
