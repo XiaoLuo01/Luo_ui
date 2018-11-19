@@ -43,10 +43,11 @@ new Vue({
             console.log(e)
         },
         showToast() {
-            this.$toast('测试 <strong>加粗文字</strong> 很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字', {
+            this.$toast('你的智商需要充值', {
                 enableHtml: true,
+                position: 'middle',
                 closeButton: {
-                    text: '知道了',
+                    text: '已充值',
                     callback(toast) {
                         toast.log()
                         // console.log('用户说他知道了')
