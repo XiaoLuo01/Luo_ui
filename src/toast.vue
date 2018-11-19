@@ -36,9 +36,9 @@ export default {
     },
     position: {
       type: String,
-      default: 'top',
+      default: "top",
       validator(value) {
-        return ['top', 'bottom', 'middle'].indexOf(value) >= 0
+        return ["top", "bottom", "middle"].indexOf(value) >= 0
       }
     }
   },
@@ -73,6 +73,7 @@ export default {
     },
     close() {
       this.$el.remove()
+      this.$emit('beforeClose')
       this.$destroy()
     },
     log() {
@@ -92,6 +93,16 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%)
+  }
+}
 .toast {
   position: fixed;
   left: 50%;
@@ -105,6 +116,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0 16px;
+  animation: fade-in 1s;
   .message {
     padding: 8px 0;
   }
@@ -130,5 +142,4 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     transform: translate(-50%, -50%);
   }
 }
-
 </style>
