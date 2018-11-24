@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: "VioTabs",
   props: {
@@ -21,11 +22,18 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      eventBus: new Vue()
+    }
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus
+    }
   },
   components: {},
-  created() {
-    // this.$emit('update:selected', 'xxx')
+  mounted() {
+    this.eventBus.$emit('update:selected', this.selected)
   }
 }
 </script>

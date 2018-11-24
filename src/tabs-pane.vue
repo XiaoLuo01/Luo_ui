@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-pane">
+    <div class="tabs-pane" :class="classes" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -7,12 +7,38 @@
 <script>
 export default {
   name: "VioTabsPane",
+  inject: ['eventBus'],
   data() {
-    return {}
+    return {
+      active: false
+    }
   },
-  components: {}
+  props: {
+    name: {
+      type: String|Number,
+      required: true
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        active: this.active
+      }
+    }
+  },
+  components: {},
+  created() {
+    this.eventBus.$on('update:selected', (name) => {
+      this.active = name === this.name
+    })
+  }
 }
 </script>
 
 <style scoped lang="scss">
+.tabs-pane {
+  &.active {
+    background: red;
+  }
+}
 </style>

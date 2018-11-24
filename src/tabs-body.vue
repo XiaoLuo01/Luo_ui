@@ -7,6 +7,7 @@
 <script>
 export default {
   name: "VioTabsBody",
+  inject: ['eventBus'],
   data() {
     return {}
   },
