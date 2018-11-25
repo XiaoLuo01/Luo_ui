@@ -16,9 +16,12 @@ export default {
     return {}
   },
   components: {},
-  created() {
+  mounted() {
     this.eventBus.$on('update:selected', (name, vm) => {
-
+      let {width, height, top, left} = vm.$el.getBoundingClientRect()
+      let offsetLeft = vm.$el.offsetLeft
+      this.$refs.line.style.width = `${width}px`
+      this.$refs.line.style.left = `${offsetLeft}px`
     })
   }
 }
@@ -37,7 +40,7 @@ $border-bottom: blue;
     position: absolute;
     bottom: 0;
     border-bottom: 2px solid $border-bottom;
-    width: 100px;
+    transition: all 350ms;
   }
   > .actions-wrapper {
     margin-left: auto;
