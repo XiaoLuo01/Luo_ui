@@ -33,7 +33,7 @@ export default {
   components: {},
   methods: {
     xxx() {
-      this.eventBus.$emit('update:selected', this.name)
+      this.eventBus.$emit('update:selected', this.name, this)
     }
   },
   created() {
@@ -48,6 +48,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$blue: blue;
 .tabs-item {
   // flex-grow: 1;
   flex-shrink: 0;
@@ -57,7 +58,8 @@ export default {
   display: flex;
   align-items: center;
   &.active {
-    background: red;
+    font-weight: bold;
+    color: $blue;
   }
 }
 </style>

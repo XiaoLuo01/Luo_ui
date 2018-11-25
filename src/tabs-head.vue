@@ -1,6 +1,7 @@
 <template>
     <div class="tabs-head">
         <slot></slot>
+        <div class="line" ref="line"></div>
         <div class="actions-wrapper">
           <slot name="actions"></slot>
         </div>
@@ -16,18 +17,28 @@ export default {
   },
   components: {},
   created() {
-    console.log(this.eventBus);
+    this.eventBus.$on('update:selected', (name, vm) => {
+
+    })
   }
 }
 </script>
 
 <style scoped lang="scss">
 $tab-height: 40px;
+$border-bottom: blue;
 .tabs-head {
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+  > .line {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 2px solid $border-bottom;
+    width: 100px;
+  }
   > .actions-wrapper {
     margin-left: auto;
   }
