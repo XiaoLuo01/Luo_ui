@@ -63,6 +63,21 @@
       </div>
 
       <div class="box">
+        <v-popover>
+          <template slot="content">
+            <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
+          </template>
+          <v-button style="margin-right: 10px;">hover激活</v-button>
+        </v-popover>
+        <v-popover>
+          <template slot="content">
+            <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
+          </template>
+          <v-button>click激活</v-button>
+        </v-popover>
+      </div>
+
+      <div class="box">
         <button @click="showToast1">top</button>
         <button @click="showToast2">middle</button>
         <button @click="showToast3">bottom</button>

@@ -55,6 +55,7 @@ export default {
   align-items: center;
   justify-content: center;
   vertical-align: top;
+  cursor: pointer;
   &:hover {
     border-color: var(--border-color-hover);
   }
