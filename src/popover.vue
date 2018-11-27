@@ -1,6 +1,6 @@
 <template>
- <div class="popover" @click="xxx">
-    <div class="content-wrapper" v-if="visible">
+ <div class="popover" @click.stop="xxx">
+    <div class="content-wrapper" v-if="visible" @click.stop>
         <slot name="content"></slot>
     </div>
     <slot></slot>
@@ -21,6 +21,17 @@ export default {
  methods: {
      xxx() {
          this.visible = !this.visible
+         if(this.visible) {
+             // 监听外面的点击事件
+             this.$nextTick(() => {
+                 let eventHandler = () => {
+                     this.visible = false
+                     // 监听完毕之后就要移除, 不然的话每一次点击都会新增一个监听器
+                     document.removeEventListener('click', eventHandler)
+                 }
+                 document.addEventListener('click', eventHandler)
+             })
+         }
      }
  }
 }
