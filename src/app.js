@@ -52,6 +52,9 @@ new Vue({
         // this.$toast('测试toast')
     },
     methods: {
+        yyy() {
+            console.log('yyy')
+        },
         inputChange(e) {
             console.log(e)
         },

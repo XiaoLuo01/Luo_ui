@@ -40,7 +40,7 @@
   </head>
   <body>
     <div id="app">
-      <div style="height: 1000px;"></div>
+      <!-- <div style="height: 1000px;"></div> -->
 
       <div class="box">
         <v-tabs :selected.sync="selectedTab">
@@ -63,8 +63,8 @@
         </v-tabs>
       </div>
 
-      <div class="box">
-        <v-popover>
+      <div class="box" @click="yyy">
+        <v-popover >
           <template slot="content">
             <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
           </template>
