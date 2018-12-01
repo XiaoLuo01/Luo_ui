@@ -5,13 +5,27 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'VioCollapse',
-  data() {
-    return {
-
+  props: {
+    accordion: {
+      type: Boolean,
+      default: false
     }
   },
+  data() {
+    return {
+      
+    }
+  },
+  provide() {
+    if(this.accordion) {
+      return {
+        eventBus: new Vue
+      }
+    }
+  }
 }
 </script>
 
@@ -19,7 +33,7 @@ export default {
 $grey: #ddd;
 $border-radius: 4px;
 .collapse {
-    border: 1px solid $grey;
-    border-radius: $border-radius;
+  border: 1px solid $grey;
+  border-radius: $border-radius;
 }
 </style>
