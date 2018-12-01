@@ -1,5 +1,5 @@
 <template>
- <div class="popover" @click="onClick" ref="popover">
+ <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]: true}">
         <slot name="content"></slot>
     </div>
@@ -17,17 +17,53 @@ export default {
       visible: false
   }
  },
- props: {
-     position: {
-         type: String,
-         default: 'top',
-         validator(val) {
-            return ['top', 'bottom', 'left', 'right'].indexOf(val) >= 0
-         }
-     }
+ computed: {
+    openEvent() {
+        if(this.trigger === 'click') {
+            return 'click'
+        } else {
+            return 'mouseenter'
+        }
+    },
+    closeEvent() {
+        if(this.trigger === 'click') {
+            return 'click'
+        } else {
+            return 'mouseleave'
+        }
+    }
  },
- components: {
-
+ props: {
+    position: {
+        type: String,
+        default: 'top',
+        validator(val) {
+            return ['top', 'bottom', 'left', 'right'].indexOf(val) >= 0
+        }
+    },
+    trigger: {
+        type: String,
+        default: 'click',
+        validator(val) {
+            return ['click', 'hover'].indexOf(val) >= 0
+        }
+    }
+ },
+ mounted() {
+    if(this.trigger === 'click') {
+        this.$refs.popover.addEventListener('click', this.onClick)
+    } else {
+        this.$refs.popover.addEventListener('mouseenter', this.open)
+        this.$refs.popover.addEventListener('mouseleave', this.close)
+    }
+ },
+ destroyed() {
+    if(this.trigger === 'click') {
+        this.$refs.popover.removeEventListener('click', this.onClick)
+    } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
+    }
  },
  methods: {
      positionContent() {
@@ -88,9 +124,6 @@ export default {
             }
          }
      }
- },
- mounted() {
-     
  }
 }
 </script>
