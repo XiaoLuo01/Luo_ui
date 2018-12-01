@@ -12,19 +12,25 @@ export default {
     accordion: {
       type: Boolean,
       default: false
+    },
+    selected: {
+      type: String
     }
   },
   data() {
     return {
-      
+      eventBus: new Vue
     }
   },
   provide() {
-    if(this.accordion) {
+    // if(this.accordion) {
       return {
-        eventBus: new Vue
+        eventBus: this.eventBus
       }
-    }
+    // }
+  },
+  mounted() {
+    this.eventBus.$emit('updata:selected', this.selected)
   }
 }
 </script>
