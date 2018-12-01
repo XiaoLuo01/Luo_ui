@@ -71,8 +71,9 @@
           <v-button>hover激活</v-button>
         </v-popover>
         <v-popover trigger="click">
-          <template slot="content">
+          <template slot="content" slot-scope="{close}">
             <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
+            <v-button @click="close">关闭</v-button>
           </template>
           <v-button>click激活</v-button>
         </v-popover>

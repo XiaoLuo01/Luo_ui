@@ -1,7 +1,7 @@
 <template>
  <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]: true}">
-        <slot name="content"></slot>
+        <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block">
         <slot></slot>
@@ -12,27 +12,6 @@
 <script>
 export default {
  name: 'VioPopover',
- data() {
-  return {
-      visible: false
-  }
- },
- computed: {
-    openEvent() {
-        if(this.trigger === 'click') {
-            return 'click'
-        } else {
-            return 'mouseenter'
-        }
-    },
-    closeEvent() {
-        if(this.trigger === 'click') {
-            return 'click'
-        } else {
-            return 'mouseleave'
-        }
-    }
- },
  props: {
     position: {
         type: String,
@@ -48,6 +27,11 @@ export default {
             return ['click', 'hover'].indexOf(val) >= 0
         }
     }
+ },
+ data() {
+  return {
+      visible: false
+  }
  },
  mounted() {
     if(this.trigger === 'click') {
