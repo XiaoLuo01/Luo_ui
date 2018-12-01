@@ -64,17 +64,29 @@
       </div>
 
       <div class="box">
-        <v-popover >
+        <v-popover position="bottom">
           <template slot="content">
             <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。dsadsadfafdgfdhgfshsfhgfhfgxhsfhgsfafgdgfdgad</div>
           </template>
-          <v-button style="margin-right: 10px;">hover激活</v-button>
+          <v-button>hover激活</v-button>
         </v-popover>
         <v-popover>
           <template slot="content">
             <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
           </template>
           <v-button>click激活</v-button>
+        </v-popover>
+        <v-popover position="left">
+          <template slot="content">
+            <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
+          </template>
+          <v-button>left激活</v-button>
+        </v-popover>
+        <v-popover position="right">
+          <template slot="content">
+            <div>这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
+          </template>
+          <v-button>right激活</v-button>
         </v-popover>
       </div>
 
