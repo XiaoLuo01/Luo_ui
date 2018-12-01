@@ -30,7 +30,11 @@ export default {
     // }
   },
   mounted() {
-    this.eventBus.$emit('updata:selected', this.selected)
+    this.eventBus.$emit('update:selected', this.selected)
+    this.eventBus.$on('update:selected', (name) => {
+      // 通知外界
+      this.$emit('update:selected', name)
+    })
   }
 }
 </script>

@@ -29,7 +29,7 @@ export default {
   },
   inject: ['eventBus'],
   mounted() {
-    this.eventBus && this.eventBus.$on('updata:selected', (name) => {
+    this.eventBus && this.eventBus.$on('update:selected', (name) => {
       if(name !== this.name) {
         this.close()
       } else {
@@ -42,7 +42,7 @@ export default {
       if(this.open) {
         this.open = false
       } else {
-        this.eventBus && this.eventBus.$emit('updata:selected', this.name)
+        this.eventBus && this.eventBus.$emit('update:selected', this.name)
       }
     },
     show() {
