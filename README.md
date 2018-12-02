@@ -1,4 +1,4 @@
-# 轱辘 - 一个 Vue UI 组件
+# Violet_ui - 一套基于 Vue 2.5 的 UI 组件库
 
 作者: Carol
 
