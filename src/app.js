@@ -50,7 +50,8 @@ new Vue({
         loading2: true,
         loading3: false,
         message: 'hello',
-        selectedTab: 'sports'
+        selectedTab: 'sports',
+        selectedTitle: ['1', '2']
     },
     created() {
         // this.$toast('测试toast')
