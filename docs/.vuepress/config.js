@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/Violet_ui/',
   title: 'Violet_ui',
   description: '一个好用的 UI 框架',
   themeConfig: {
