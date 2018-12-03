@@ -1,8 +1,7 @@
 const expect = chai.expect
 import Vue from "vue"
-import Row from "../src/row"
-import Col from "../src/col"
-import { emit } from "cluster"
+import Row from "../src/layout/grid/row"
+import Col from "../src/layout/grid/col"
 
 describe("Row", () => {
   it("存在.", () => {
