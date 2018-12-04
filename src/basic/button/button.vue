@@ -36,14 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  $font-size: 14px;
-  $button-height: 32px;
-  $button-bg: white;
-  $button-active-bg: #eee;
-  $border-radius: 4px;
-  $color: #333;
-  $border-color: #999;
-  $border-color-hover: #666;
+@import '/static/var';
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -56,7 +49,7 @@ export default {
   font-size: $font-size;
   height: $button-height; 
   padding: 0 1em;
-  border-radius: $border-radius; 
+  border-radius: $border-raduis; 
   border: 1px solid $border-color;
   background: $button-bg;
   display: inline-flex; 
