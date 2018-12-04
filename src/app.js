@@ -20,6 +20,7 @@ import TabsPane from './navigation/tabs/tabs-pane'
 import Popover from './viewport/popover/popover'
 import Collapse from './layout/collapse/collapse'
 import CollapseItem from './layout/collapse/collapse-item'
+import Cascader from './form/cascader/cascader'
 
 Vue.component('v-button', Button)
 Vue.component('v-button-group', ButtonGroup)
@@ -41,6 +42,7 @@ Vue.component('v-tabs-pane', TabsPane)
 Vue.component('v-popover', Popover)
 Vue.component('v-collapse', Collapse)
 Vue.component('v-collapse-item', CollapseItem)
+Vue.component('v-cascader', Cascader)
 Vue.use(Plugin)
 
 new Vue({
@@ -51,7 +53,33 @@ new Vue({
         loading3: false,
         message: 'hello',
         selectedTab: 'sports',
-        selectedTitle: ['1', '2']
+        selectedTitle: ['1', '2'],
+        source: [{
+            name: '浙江',
+            children: [{
+                name: '杭州',
+                children: [
+                    { name: '上城区', },
+                    { name: '下城区'}]
+            }] 
+        },{
+            name: '湖南',
+            children: [{
+                name: '长沙',
+                children: [
+                    {name: '雨花区',},
+                    {name: '芙蓉区',},
+                    {name: '岳麓区'}
+                ]
+            },{
+                name: '衡阳',
+                children: [
+                    {name: '蒸湘区',},
+                    {name: '雁峰区',},
+                    {name: '珠晖区'}
+                ]
+            }] 
+        }]
     },
     created() {
         // this.$toast('测试toast')
