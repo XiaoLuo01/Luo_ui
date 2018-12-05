@@ -79,6 +79,16 @@ new Vue({
                     {name: '珠晖区'}
                 ]
             }] 
+        },{
+            name: '广东',
+            children: [{
+                name: '广州',
+                children: [
+                    {name: '天河区',},
+                    {name: '白云区',},
+                    {name: '越秀区'}
+                ]
+            }]
         }]
     },
     created() {
