@@ -3,8 +3,8 @@
     <div class="trigger" @click="popoverVisible = !popoverVisible">
       <!-- <slot></slot> -->
     </div>
-    <div class="popover" v-if="popoverVisible">
-       <cascader-items :items="options"></cascader-items>
+    <div class="popover-wrapper" v-if="popoverVisible">
+       <cascader-items :items="options" class="popover" :height="popoverHeight"></cascader-items>
     </div>
   </div>
 </template>
@@ -16,6 +16,9 @@ export default {
   props: {
     options: {
       type: Array
+    },
+    popoverHeight: {
+      type: String
     }
   },
   components: {
@@ -23,25 +26,7 @@ export default {
   },
   data() {
     return {
-      popoverVisible: false,
-      firstLevelSelected: null,
-      secondLevelSelected: null
-    }
-  },
-  computed: {
-    secondLevelItems() {
-      if (this.firstLevelSelected) {
-        return this.firstLevelSelected.children
-      } else {
-        return []
-      }
-    },
-    thirdLevelItems() {
-      if (this.secondLevelSelected) {
-        return this.secondLevelSelected.children
-      } else {
-        return []
-      }
+      popoverVisible: false
     }
   }
 }
@@ -50,19 +35,20 @@ export default {
 <style scoped lang="scss">
   @import '/static/var';
   .cascader {
+    position: relative;
     > .trigger {
       height: 32px;
       width: 100px;
-      border: 1px solid red;
+      border: 1px solid #000;
     }
-    > .popover {
-      height: 200px;
-      // width: 240px;
-      border: 1px solid blue;
+    > .popover-wrapper {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 99;
+      background: #fff;
       display: flex;
-      > .label {
-        white-space: nowrap;
-      }
+      @extend .box-shadow;
     }
   }
 </style>
