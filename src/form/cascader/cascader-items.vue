@@ -45,7 +45,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '/static/var';
   .cascader-items {
     display: flex;
     align-items: flex-start;

@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '/static/var';
-
 .wrapper {
   font-size: $font-size;
   display: inline-flex;

@@ -33,7 +33,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '/static/var';
   .cascader {
     position: relative;
     > .trigger {
